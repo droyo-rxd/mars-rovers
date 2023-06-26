@@ -17,7 +17,7 @@ jobs:
     # - name: Install deps
     #   run: npm install
     - name: Run PR summary action
-      uses: droyo-rxd/PR-Summary
+      uses: droyo-rxd/PR-Summary@0
       with:
         OPENAI_API_KEY:  ${{ secrets.OPENAI_API_KEY }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
