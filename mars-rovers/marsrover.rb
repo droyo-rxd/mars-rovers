@@ -8,6 +8,8 @@ fo = File.open(OutputFile, "w")
 first_line = fi.readline                          #
 plateau = Plateau.new(first_line)                 # Initialize plateau object
 
+# snall change
+
 while !fi.eof?
 
   initial_position = fi.readline  
