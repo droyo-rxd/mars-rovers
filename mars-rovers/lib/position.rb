@@ -9,8 +9,8 @@ class Position
   def change_in(direction)
     @y += 1    if direction.north? 
     @y -= 1    if direction.south?
-    @x += 1    if direction.east?
-    @x -= 1    if direction.west?
+    @x += 1    if direction.west?
+    @x -= 1    if direction.east?
   end
   
   def on_north_limit?; @y == @plateau.north_limit; end  
