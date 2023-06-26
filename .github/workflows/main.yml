@@ -5,11 +5,19 @@ on:
       - "opened"
 
 jobs:
-  openai-pr-description:
-    runs-on: ubuntu-22.04
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - uses: platisd/openai-pr-description@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+    - name: Check out repo
+      uses: actions/checkout@v2
+    - name: Use Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.x'
+    # - name: Install deps
+    #   run: npm install
+    - name: Run PR summary action
+      uses: droyo-rxd/PR-Summary@0.0.2
+      with:
+        OPENAI_API_KEY:  ${{ secrets.OPENAI_API_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
